@@ -45,7 +45,7 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-          <img src="https://kitpro.site/lawncare/wp-content/uploads/sites/193/2023/10/Logo-Lawncare-2-01-1024x238.png" alt=""  className=""/>
+          <img src="https://kitpro.site/lawncare/wp-content/uploads/sites/193/2023/10/Logo-Lawncare-2-01-1024x238.png" alt=""  className=" h-10"/>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
