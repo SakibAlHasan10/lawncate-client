@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 const Navbar = () => {
   return (
     <div>
@@ -43,7 +45,7 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-          <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+          <img src="https://kitpro.site/lawncare/wp-content/uploads/sites/193/2023/10/Logo-Lawncare-2-01-1024x238.png" alt=""  className=""/>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
@@ -69,7 +71,14 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <a className="btn">Button</a>
+          <NavLink
+            to={`/sign_in`}
+            className={({ isActive, isPending }) =>
+              isActive ? "active text-green-500" : isPending ? "pending" : ""
+            }
+          >
+            <a className="btn-sm hover:text-green-500">SignIn</a>
+          </NavLink>
         </div>
       </div>
     </div>
