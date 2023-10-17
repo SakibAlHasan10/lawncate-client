@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -45,28 +45,79 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-          <img src="https://kitpro.site/lawncare/wp-content/uploads/sites/193/2023/10/Logo-Lawncare-2-01-1024x238.png" alt=""  className=" h-10"/>
+          <Link to={"/"}>
+            <img
+              src="https://kitpro.site/lawncare/wp-content/uploads/sites/193/2023/10/Logo-Lawncare-2-01-1024x238.png"
+              alt=""
+              className=" h-10"
+            />
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             <li>
-              <a>Item 1</a>
+              <NavLink
+                to={`/`}
+                className={({ isActive, isPending }) =>
+                  isActive
+                    ? "active text-green-500"
+                    : isPending
+                    ? "pending"
+                    : ""
+                }
+              >
+                <a className=" hover:text-green-500">Home</a>
+              </NavLink>
             </li>
-            <li tabIndex={0}>
-              <details>
-                <summary>Parent</summary>
-                <ul className="p-2">
-                  <li>
-                    <a>Submenu 1</a>
-                  </li>
-                  <li>
-                    <a>Submenu 2</a>
-                  </li>
-                </ul>
-              </details>
+            <li tabIndex={0} >
+              
+                <details >
+                  <summary className="hover:text-green-500">About Us</summary>
+                  <ul className="p-2">
+                    <li>
+                      <NavLink
+                        to={`/about`}
+                        className={({ isActive, isPending }) =>
+                          isActive
+                            ? "active text-green-500"
+                            : isPending
+                            ? "pending"
+                            : ""
+                        }
+                      >
+                        <a className=" hover:text-green-500">About Us</a>
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink
+                        to={`/team`}
+                        className={({ isActive, isPending }) =>
+                          isActive
+                            ? "active text-green-500"
+                            : isPending
+                            ? "pending"
+                            : ""
+                        }
+                      >
+                        <a className=" hover:text-green-500">Team</a>
+                      </NavLink>
+                    </li>
+                  </ul>
+                </details>
             </li>
             <li>
-              <a>Item 3</a>
+              <NavLink
+                to={`/contact`}
+                className={({ isActive, isPending }) =>
+                  isActive
+                    ? "active text-green-500"
+                    : isPending
+                    ? "pending"
+                    : ""
+                }
+              >
+                <a className="btn-sm hover:text-green-500">Contact Us</a>
+              </NavLink>
             </li>
           </ul>
         </div>
